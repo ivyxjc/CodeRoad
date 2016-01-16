@@ -1,0 +1,12 @@
+package java4Android01;
+
+class Override {
+	
+	String name;
+	int age;
+	
+	void introduce()
+	{
+		System.out.println("my name is "+name+" my age is "+age);
+	}
+}
