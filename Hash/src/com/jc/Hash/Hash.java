@@ -37,7 +37,7 @@ public class Hash {
 //3ef7aa6cbeff8004297cbbe35dcc2e21d1ee22f4
     //"MD5"，"SHA1"，"SHA-256"，"SHA-384"，"SHA-512"
     public static void main(String[] args)throws Exception{
-        System.out.println(getHash("G:\\ThunderDownload\\少数派报告BD中英双字1280x720高清版.rmvb","SHA1"));
+        System.out.println(getHash("C:\\Users\\xgh\\Downloads\\ideaIU-15.0.3.exe","SHA-256"));
     }
 
 }
