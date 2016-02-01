@@ -5,6 +5,5 @@ package com.jc.Searching;
  */
 public class LookupIndex {
     public static void main(String[] args){
-
     }
 }
