@@ -1,5 +1,7 @@
 package com.jc.Graph2;
 
+import com.jc.Graph2.SymbolGraph.SymbolGraph;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -18,8 +20,8 @@ public class BreadthFirstPaths {
         this.s=s;
         markedArray=new boolean[G.V()];
         edgeTo=new int[G.V()];
-
     }
+
 
     private void bfs(int s){
         Queue<Integer> queue=new LinkedList<>();
