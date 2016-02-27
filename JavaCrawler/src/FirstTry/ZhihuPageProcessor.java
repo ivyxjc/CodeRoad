@@ -1,6 +1,5 @@
 package FirstTry;
-import com.sun.javaws.jnl.ResourcesDesc;
-import org.apache.log4j.BasicConfigurator;
+
 import org.apache.log4j.PropertyConfigurator;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
@@ -23,7 +22,7 @@ public class ZhihuPageProcessor implements PageProcessor {
             .addHeader("Accept-Language", "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3")
             .setCharset("UTF-8");
 
-    private static final int voteNum = 1000;
+    private static final int voteNum = 0;
 
 
     @Override
@@ -34,8 +33,14 @@ public class ZhihuPageProcessor implements PageProcessor {
         page.addTargetRequests(relativeUrl);
         List<String> answers =  page.getHtml().xpath("//div[@id='zh-question-answer-wrap']/div").all();
         boolean exist = false;
+
+
         for(String answer:answers){
-            String vote = new Html(answer).xpath("//div[@class='zm-votebar']//span[@class='count']/text()").toString();
+            String vote = new Html(answer).xpath("//div[@class='zm-votar']//span[@class='count']/text()").toString();
+            System.out.println();
+            System.out.println("____________________--------------------++++");
+            System.out.println();
+            System.out.println(answer);
             if(Integer.valueOf(vote) >= voteNum){
                 page.putField("vote",vote);
                 page.putField("content",new Html(answer).xpath("//div[@class='zm-editable-content']"));
@@ -57,7 +62,7 @@ public class ZhihuPageProcessor implements PageProcessor {
         String log4jConfPath = "log4j.properties";
         PropertyConfigurator.configure(log4jConfPath);
         Spider.create(new ZhihuPageProcessor()).
-                addUrl("http://www.zhihu.com/search?type=question&q=java").
+                addUrl("https://www.zhihu.com/search?type=question&q=c").
                 addPipeline(new FilePipeline("E:\\webmagic\\")).
                 thread(5).
                 run();

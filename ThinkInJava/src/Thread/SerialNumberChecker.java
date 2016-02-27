@@ -52,8 +52,9 @@ public class SerialNumberChecker {
         @Override
         public void run() {
                 int serial=SerialNumberGenerator.nextSerialNumber();
-                if (serials.conta
-                while(true){ins(serial)) {
+
+                while(true) {
+                    if (serials.contains(serial)) {
                     System.out.println("Duplicate: "+serial);
                     System.exit(0);
                 }
