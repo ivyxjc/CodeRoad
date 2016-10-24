@@ -16,5 +16,6 @@ public class Soldier {
     public void killEnenmy(){
         StdOut.println("Kill Enemy......");
         gun.shoot();
+
     }
 }
