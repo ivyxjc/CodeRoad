@@ -1,7 +1,7 @@
 package priciples.lsp.gun;
 
 /**
- * Created by yanjiusuo4 on 2016/10/24.
+ * Created by ivyxjc on 2016/10/24.
  */
 public class Client {
     public static void main(String[] args){

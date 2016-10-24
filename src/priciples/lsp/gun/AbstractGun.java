@@ -3,7 +3,7 @@ package priciples.lsp.gun;
 import edu.princeton.algs4.StdOut;
 
 /**
- * Created by yanjiusuo4 on 2016/10/24.
+ * Created by ivyxjc on 2016/10/24.
  */
 public abstract class AbstractGun {
     public abstract void shoot();
