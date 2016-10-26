@@ -31,6 +31,4 @@ public class Multipleton {
 
         return list.get(countNum);
     }
-
-
 }
