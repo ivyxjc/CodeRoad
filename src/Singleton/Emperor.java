@@ -1,9 +1,8 @@
-package priciples.Singleton;
+package Singleton;
 
 import edu.princeton.algs4.StdOut;
 
 import java.io.ObjectStreamException;
-import java.util.Objects;
 
 /**
  * Created by ivyxjc on 2016/10/25.

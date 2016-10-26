@@ -1,4 +1,4 @@
-package priciples.Singleton;
+package Singleton;
 
 import java.util.ArrayList;
 import java.util.Random;
