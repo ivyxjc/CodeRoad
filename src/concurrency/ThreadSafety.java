@@ -13,9 +13,12 @@ public class ThreadSafety {
 
     public static void main(String[] args){
 
-//        for(int i=0;i<10;i++){
+
+
+
+        for(int i=0;i<10;i++){
             test();
-//        }
+        }
 
 //        List<Integer> list=new ArrayList<>();
 //        list.add(1);
@@ -28,7 +31,7 @@ public class ThreadSafety {
     public static void test()
     {
         // 用来测试的List
-        List<Object> list=new ArrayList<>();
+        ArrayList<Object> list=new ArrayList<>();
 
 
         //线程安全的list
@@ -64,8 +67,13 @@ public class ThreadSafety {
             }
         }
         // List的size
-        System.out.println(res) ;
+//        System.out.println(res) ;
         System.out.println(list.size());
+        if(list.last()!=null){
+            StdOut.println("not null");
+        }else{
+            StdOut.println("null");
+        }
     }
 }
 

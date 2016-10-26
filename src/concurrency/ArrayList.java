@@ -1,6 +1,8 @@
 package concurrency;
 
 
+import edu.princeton.algs4.StdOut;
+
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
@@ -111,8 +113,16 @@ public class ArrayList<E> extends AbstractList<E>
 
     public boolean add(E e) {
         ensureCapacityInternal(size + 1);  // Increments modCount!!
-        elementData[size++] = e;
+
+        elementData[size] = e;
+        sizePlusOne();
+//        StdOut.println(size);
+
         return true;
+    }
+
+    public void sizePlusOne(){
+        size++;
     }
 
     public void ensureCapacity(int minCapacity) {
@@ -176,6 +186,10 @@ public class ArrayList<E> extends AbstractList<E>
     @Override
     public int size() {
         return size;
+    }
+
+    public Object last(){
+        return elementData[size-1];
     }
 
     @Override
