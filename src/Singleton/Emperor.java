@@ -1,4 +1,4 @@
-package Singleton;
+package singleton;
 
 import edu.princeton.algs4.StdOut;
 
