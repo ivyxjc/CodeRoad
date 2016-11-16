@@ -1,7 +1,7 @@
 package factory;
 
 /**
- * Created by 2438981 on 2016/11/11.
+ * Created by ivyxjc on 2016/11/11.
  */
 public class SimpleFactory {
     public static <T extends Human> T createHuman(Class<T> c){
