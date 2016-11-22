@@ -1,4 +1,4 @@
-package stone.Exception;
+package stone.exception;
 
 import ast.ASTree;
 

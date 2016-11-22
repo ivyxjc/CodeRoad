@@ -1,4 +1,4 @@
-package stone.Exception;
+package stone.exception;
 
 /**
  * Created by ivxyjc on 2016/11/20.
