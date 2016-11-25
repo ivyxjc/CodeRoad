@@ -1,4 +1,8 @@
 package stone;
+
+/**
+ * Created by jc on 11/21/2016.
+ */
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -55,4 +59,3 @@ public class CodeDialog extends Reader {
             throw new FileNotFoundException("no file specified");
     }
 }
-
