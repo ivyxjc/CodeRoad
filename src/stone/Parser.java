@@ -3,7 +3,7 @@ package stone;
 import ast.ASTLeaf;
 import ast.ASTList;
 import ast.ASTree;
-import stone.Exception.ParseException;
+import stone.exception.ParseException;
 
 import java.util.HashMap;
 import java.util.HashSet;

@@ -1,5 +1,6 @@
 package stone;
 
+import jdk.nashorn.internal.codegen.ClassEmitter;
 import jdk.nashorn.internal.runtime.regexp.joni.Regex;
 
 import java.util.regex.Matcher;
@@ -25,5 +26,17 @@ public class Test {
 
         System.out.println("-------");
         System.out.println(matcher.group(0));
+        System.out.println(new Test().a());
+        System.out.println();
+    }
+
+    public String a(){
+        try{
+            Class.forName(getClass().getName());
+            System.out.print(getClass().getName());
+        }catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return  "aa";
     }
 }
