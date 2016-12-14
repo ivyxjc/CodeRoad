@@ -1,4 +1,4 @@
-package adapter;
+package adapter.objectAdapter;
 
 /**
  * Created by jc on 12/4/2016.
