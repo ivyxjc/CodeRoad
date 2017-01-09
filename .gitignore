@@ -1,4 +1,4 @@
-# Built application files
+lt application files
 *.apk
 *.ap_
 
@@ -33,7 +33,6 @@ proguard/
 captures/
 
 # Intellij
-*.iml
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/libraries
@@ -49,4 +48,10 @@ captures/
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
 
-config/
+
+**/config.*
+
+
+*.java.hsp
+*.sonarj
+*.sw*
