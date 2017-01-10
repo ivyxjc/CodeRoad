@@ -11,6 +11,8 @@ public class BeanDefinition {
 
     private String beanClassName;
 
+    private PropertyValues propertyValues=new PropertyValues();
+
     public BeanDefinition(){
 
     }
@@ -33,5 +35,22 @@ public class BeanDefinition {
 
     public String getBeanClassName() {
         return beanClassName;
+    }
+
+    public void setBeanClassName(String beanClassName){
+        this.beanClassName=beanClassName;
+        try{
+            this.beanClass=Class.forName(beanClassName);
+        }catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+
+    public PropertyValues getPropertyValues() {
+        return propertyValues;
+    }
+
+    public void setPropertyValues(PropertyValues propertyValues) {
+        this.propertyValues = propertyValues;
     }
 }

@@ -20,4 +20,11 @@ public abstract class AbstractBeanDefinitionReader implements BeanDefinitionRead
         this.resourceLoader=resourceLoader;
     }
 
+    public Map<String, BeanDefinition> getRegistry() {
+        return registry;
+    }
+
+    public ResourceLoader getResourceLoader() {
+        return resourceLoader;
+    }
 }
