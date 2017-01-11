@@ -1,4 +1,4 @@
-package xyz.ivyxjc.io;
+package xyz.ivyxjc.beans.io;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package xyz.ivyxjc;
+package xyz.ivyxjc.beans;
 /**
  * Created by jc on 1/5/2017.
  */

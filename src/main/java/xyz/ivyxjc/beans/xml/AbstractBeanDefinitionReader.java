@@ -1,8 +1,8 @@
-package xyz.ivyxjc.xml;
+package xyz.ivyxjc.beans.xml;
 
 
-import xyz.ivyxjc.BeanDefinition;
-import xyz.ivyxjc.io.ResourceLoader;
+import xyz.ivyxjc.beans.BeanDefinition;
+import xyz.ivyxjc.beans.io.ResourceLoader;
 
 import java.util.HashMap;
 import java.util.Map;
