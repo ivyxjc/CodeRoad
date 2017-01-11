@@ -12,6 +12,6 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 
-    
+    compile "aopalliance:aopalliance:1.0"
     compile ()
 }

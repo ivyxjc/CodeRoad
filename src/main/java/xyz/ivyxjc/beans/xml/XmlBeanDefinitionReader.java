@@ -4,6 +4,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import xyz.ivyxjc.BeanReference;
 import xyz.ivyxjc.beans.BeanDefinition;
 import xyz.ivyxjc.beans.PropertyValue;
 import xyz.ivyxjc.beans.io.Resource;
@@ -79,7 +80,21 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
                 Element propertyEle=(Element) node;
                 String name=propertyEle.getAttribute("name");
                 String value=propertyEle.getAttribute("value");
-                definition.getPropertyValues().addPropertyValue(new PropertyValue(name,value));
+
+                if(value!=null && value.length()>0){
+                    definition.getPropertyValues().addPropertyValue(new PropertyValue(name,value));
+                }else {
+                    String ref=propertyEle.getAttribute("ref");
+                    if(ref==null||ref.length()==0){
+                        throw new IllegalArgumentException("Configuration problem: <property> element for property '"
+                                + name + "' must specify a ref or value");
+                    }
+                    BeanReference reference=new BeanReference(ref);
+                    BeanReference beanReference=new BeanReference(value);
+
+                    definition.getPropertyValues().addPropertyValue(new PropertyValue(name,beanReference));
+                }
+
             }
         }
     }

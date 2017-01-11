@@ -1,5 +1,6 @@
 package xyz.ivyxjc.beans.beanFactory;
 
+import xyz.ivyxjc.BeanReference;
 import xyz.ivyxjc.beans.BeanDefinition;
 import xyz.ivyxjc.beans.PropertyValue;
 
@@ -22,10 +23,17 @@ public class AutowiredBeanFactory extends AbstractBeanFactory{
     }
 
     protected void applyPropertyValue(Object bean, BeanDefinition beanDefinition) throws Exception{
-        for(PropertyValue value:beanDefinition.getPropertyValues().getPropertyValuesList()){
-            Field fields=bean.getClass().getDeclaredField(value.getName());
+        for(PropertyValue propertyValue:beanDefinition.getPropertyValues().getPropertyValuesList()){
+            Field fields=bean.getClass().getDeclaredField(propertyValue.getName());
             fields.setAccessible(true);
-            fields.set(bean,value.getValue());
+            Object value=propertyValue.getValue();
+
+            //注入为bean时 即xml文件 使用ref="..." 的情况
+            if(value instanceof BeanReference){
+                BeanReference beanReference=(BeanReference) value;
+                value=getBean(beanReference.getName());
+            }
+            fields.set(bean,value);
         }
     }
 }
