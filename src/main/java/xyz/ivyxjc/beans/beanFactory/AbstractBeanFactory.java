@@ -15,7 +15,7 @@ public abstract class AbstractBeanFactory implements BeanFactory {
     public Object getBean(String name)throws Exception{
         BeanDefinition beanDefinition=mBeanDefinitionMap.get(name);
         if(beanDefinition==null){
-            throw new IllegalArgumentException("No been named "+ name+" found");
+            throw new IllegalArgumentException("No been named "+ name + " found");
         }
         Object bean=beanDefinition.getBean();
         if(bean==null){

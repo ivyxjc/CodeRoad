@@ -3,15 +3,10 @@ package xyz.ivyxjc;
 /**
  * @author yihua.huang@dianping.com
  */
-public class HelloWorldService {
+public interface HelloWorldService {
 
-    private String text;
+    public void helloWorld();
 
-    public void helloWorld(){
-        System.out.println(text);
-    }
+    public void hello();
 
-    public void setText(String text) {
-        this.text = text;
-    }
 }
