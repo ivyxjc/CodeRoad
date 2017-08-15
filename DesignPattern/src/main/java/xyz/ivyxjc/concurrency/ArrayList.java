@@ -1,7 +1,6 @@
 package xyz.ivyxjc.concurrency;
 
 
-import edu.princeton.algs4.StdOut;
 
 import java.util.*;
 

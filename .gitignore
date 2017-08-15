@@ -117,10 +117,10 @@ logs/
 Runner.java
 
 # sonarlint
-.idea/**/sonarlint
+**/.idea/**/sonarlint
 
-/gradlew
-/gradlew.bat
-/.idea/markdown-navigator/
-/.idea/copyright/
-/gradle/
+**/gradlew
+**/gradlew.bat
+**/.idea/markdown-navigator/
+**/.idea/copyright/
+**/gradle/

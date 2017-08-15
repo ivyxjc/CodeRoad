@@ -1,6 +1,5 @@
 package xyz.ivyxjc.factory;
 
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by 2438981 on 2016/11/16.
@@ -37,24 +36,24 @@ abstract class AudiCar{
 class AudiQ3 extends AudiCar{
     @Override
     public void drive() {
-        StdOut.println("Q3 drive");
+        System.out.println("Q3 drive");
     }
 
     @Override
     public void selfNavigation() {
-        StdOut.println("Q3 self navigate");
+        System.out.println("Q3 self navigate");
     }
 }
 
 class AudiQ5 extends AudiCar{
     @Override
     public void drive() {
-        StdOut.println("Q5 drive");
+        System.out.println("Q5 drive");
     }
 
     @Override
     public void selfNavigation() {
-        StdOut.println("Q5 self navigate");
+        System.out.println("Q5 self navigate");
     }
 }
 
@@ -62,12 +61,12 @@ class AudiQ5 extends AudiCar{
 class AudiQ7 extends AudiCar{
     @Override
     public void drive() {
-        StdOut.println("Q7 drive");
+        System.out.println("Q7 drive");
     }
 
     @Override
     public void selfNavigation() {
-        StdOut.println("Q7 self navigate");
+        System.out.println("Q7 self navigate");
     }
 }
 

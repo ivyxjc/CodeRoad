@@ -1,7 +1,6 @@
 package xyz.ivyxjc.builder.build_2;
 
 
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by 2438981 on 2016/11/17.
@@ -10,7 +9,7 @@ public class BuildTest {
     public static void main(String[] args){
         ConcreteProductA A= (ConcreteProductA)new A_Buider().setArg_1("aa")
                                         .setArg_2("bb").create();
-        StdOut.print(A);
+        System.out.print(A);
 
     }
 }

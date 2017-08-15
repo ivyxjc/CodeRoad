@@ -1,6 +1,5 @@
 package xyz.ivyxjc.builder;
 
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by 2438981 on 2016/11/17.
@@ -10,7 +9,7 @@ public class BuilderLinked {
         Macbook_2 computer=(Macbook_2) new MacbookBuilder_2().setBoard("intel")
                                                 .setDispaly("retina")
                                                 .setOS().create();
-        StdOut.println("Computer Info : "+computer.toString());
+        System.out.println("Computer Info : " + computer.toString());
     }
 }
 

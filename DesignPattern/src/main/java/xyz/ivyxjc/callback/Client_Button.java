@@ -1,6 +1,5 @@
 package xyz.ivyxjc.callback;
 
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by jc on 11/18/2016.
@@ -34,12 +33,12 @@ class Activity implements IListener{
 
     @Override
     public void onClick() {
-        StdOut.println("onClick");
+        System.out.println("onClick");
     }
 }
 
 interface IListener{
-    public void onClick();
+    void onClick();
 }
 
 class Button{

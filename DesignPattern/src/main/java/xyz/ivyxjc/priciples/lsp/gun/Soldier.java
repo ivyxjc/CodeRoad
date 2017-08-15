@@ -1,6 +1,5 @@
 package xyz.ivyxjc.priciples.lsp.gun;
 
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by ivyxjc on 2016/10/24.
@@ -14,7 +13,7 @@ public class Soldier {
     }
 
     public void killEnenmy(){
-        StdOut.println("Kill Enemy......");
+        System.out.println("Kill Enemy......");
         gun.shoot();
 
     }

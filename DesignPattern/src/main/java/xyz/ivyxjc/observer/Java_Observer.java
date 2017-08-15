@@ -1,6 +1,5 @@
 package xyz.ivyxjc.observer;
 
-import edu.princeton.algs4.StdOut;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -46,6 +45,6 @@ class LiSi_4 implements Observer{
         System.out.println("report finish");
     }
     public void report(String reportText){
-        StdOut.println("lisi report -->"+reportText);
+        System.out.println("lisi report -->" + reportText);
     }
 }

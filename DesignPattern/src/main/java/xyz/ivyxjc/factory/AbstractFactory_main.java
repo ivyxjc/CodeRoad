@@ -1,6 +1,5 @@
 package xyz.ivyxjc.factory;
 
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by 2438981 on 2016/11/16.
@@ -63,28 +62,28 @@ abstract class AbstractProductB{
 class ConcreteProductA1 extends AbstractProductA{
     @Override
     public void method() {
-        StdOut.println("concrete product A1");
+        System.out.println("concrete product A1");
     }
 }
 
 class ConcreteProductA2 extends AbstractProductA{
     @Override
     public void method() {
-        StdOut.println("concrete product A2");
+        System.out.println("concrete product A2");
     }
 }
 
 class ConcreteProductB1 extends AbstractProductB{
     @Override
     public void method() {
-        StdOut.println("concrete product B1");
+        System.out.println("concrete product B1");
     }
 }
 
 class ConcreteProductB2 extends AbstractProductB{
     @Override
     public void method() {
-        StdOut.println("concrete product B2");
+        System.out.println("concrete product B2");
     }
 }
 

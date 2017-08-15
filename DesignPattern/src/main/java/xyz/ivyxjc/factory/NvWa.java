@@ -1,6 +1,5 @@
 package xyz.ivyxjc.factory;
 
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by jc on 10/28/2016.
@@ -27,44 +26,45 @@ abstract class AbstractHumanFactory{
 }
 
 interface Human{
-    public void getColor();
-    public void talk();
+    void getColor();
+
+    void talk();
 
 }
 
 class BlackHuman implements Human{
     @Override
     public void getColor() {
-        StdOut.println("black");
+        System.out.println("black");
     }
 
     @Override
     public void talk() {
-        StdOut.println("black talk");
+        System.out.println("black talk");
     }
 }
 
 class WhiteHuman implements Human{
     @Override
     public void getColor() {
-        StdOut.println("white");
+        System.out.println("white");
     }
 
     @Override
     public void talk() {
-        StdOut.println("white talk");
+        System.out.println("white talk");
     }
 }
 
 class YellowHuman implements Human{
     @Override
     public void getColor() {
-        StdOut.println("yellow");
+        System.out.println("yellow");
     }
 
     @Override
     public void talk() {
-        StdOut.println("yellow talk");
+        System.out.println("yellow talk");
     }
 }
 

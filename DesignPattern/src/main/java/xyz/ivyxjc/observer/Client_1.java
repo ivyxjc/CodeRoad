@@ -1,6 +1,5 @@
 package xyz.ivyxjc.observer;
 
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by ivyxjc on 2016/11/18.
@@ -23,18 +22,19 @@ public class Client_1{
 
 //        Thread.sleep(100);
         hanFeiZi.haveBreakfast();
-        StdOut.println(hanFeiZi.isHavingBreakfast());
+        System.out.println(hanFeiZi.isHavingBreakfast());
 //        Thread.sleep(100);
         hanFeiZi.haveFun();
-        StdOut.println(hanFeiZi.isHavingFun());
+        System.out.println(hanFeiZi.isHavingFun());
 
     }
 }
 
 
 interface IHanFeiZi {
-    public void haveBreakfast();
-    public void haveFun();
+    void haveBreakfast();
+
+    void haveFun();
 }
 
 class HanFeiZi implements IHanFeiZi{
@@ -44,13 +44,13 @@ class HanFeiZi implements IHanFeiZi{
 
     @Override
     public void haveBreakfast() {
-        StdOut.println("han has breakfast");
+        System.out.println("han has breakfast");
         this.isHavingBreakfast=true;
     }
 
     @Override
     public void haveFun() {
-        StdOut.println("hanhas fun");
+        System.out.println("hanhas fun");
         this.isHavingFun=true;
     }
 
@@ -74,7 +74,7 @@ class HanFeiZi implements IHanFeiZi{
 }
 
 interface  ILiSi{
-    public void update(String context);
+    void update(String context);
 }
 
 class LiSi implements ILiSi{
@@ -86,7 +86,7 @@ class LiSi implements ILiSi{
     }
 
     public void report(String reportText){
-        StdOut.println("lisi report -->"+reportText);
+        System.out.println("lisi report -->" + reportText);
     }
 }
 

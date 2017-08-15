@@ -1,6 +1,5 @@
 package xyz.ivyxjc.callback;
 
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by jc on 11/18/2016.
@@ -14,7 +13,7 @@ public class Client_Java {
 }
 
 interface Callback{
-    public void solve(String str);
+    void solve(String str);
 }
 
 class A implements Callback{
@@ -36,15 +35,15 @@ class A implements Callback{
 
     @Override
     public void solve(String str) {
-        StdOut.println("the answer is "+str);
+        System.out.println("the answer is " + str);
     }
 }
 
 class B{
 
     void doSomething(Callback callback,String question){
-        StdOut.println("B gets question: "+question);
-        StdOut.println("B do something");
+        System.out.println("B gets question: " + question);
+        System.out.println("B do something");
         callback.solve("solved");
     }
 }

@@ -1,6 +1,5 @@
 package xyz.ivyxjc.singleton;
 
-import edu.princeton.algs4.StdOut;
 
 import java.io.ObjectStreamException;
 
@@ -84,6 +83,6 @@ enum SingletonEnum{
     INSTACNE;
 
     public void doSomething(){
-        StdOut.println("doSomething...");
+        System.out.println("doSomething...");
     }
 }

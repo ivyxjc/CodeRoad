@@ -1,6 +1,5 @@
 package xyz.ivyxjc.builder;
 
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by 2438981 on 2016/11/17.
@@ -98,6 +97,6 @@ public class BuildTest{
         Direcotr pcDirector=new Direcotr(builder);
 
         pcDirector.construct("intel","retina");
-        StdOut.println("Computer Info : "+builder.create().toString());
+        System.out.println("Computer Info : " + builder.create().toString());
     }
 }

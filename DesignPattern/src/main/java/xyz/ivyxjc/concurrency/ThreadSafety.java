@@ -1,6 +1,5 @@
 package xyz.ivyxjc.concurrency;
 
-import edu.princeton.algs4.StdOut;
 
 
 import java.util.List;
@@ -70,9 +69,9 @@ public class ThreadSafety {
 //        System.out.println(res) ;
         System.out.println(list.size());
         if(list.last()!=null){
-            StdOut.println("not null");
+            System.out.println("not null");
         }else{
-            StdOut.println("null");
+            System.out.println("null");
         }
     }
 }

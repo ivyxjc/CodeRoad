@@ -1,7 +1,6 @@
 package xyz.ivyxjc.observer;
 
 import java.util.ArrayList;
-import edu.princeton.algs4.StdOut;
 
 /**
  * Created by ivxyjc on 2016/11/18.
@@ -25,18 +24,21 @@ public class Client_3_good {
 }
 
 interface Observable{
-    public void addObserver(Observer observer);
-    public void deleteObserver(Observer observer);
-    public void notifyObserver(String context);
+    void addObserver(Observer observer);
+
+    void deleteObserver(Observer observer);
+
+    void notifyObserver(String context);
 
 }
 
 interface Observer{
-    public void update(String str);
+    void update(String str);
 }
 interface IHanFeiZi_3 {
-    public void haveBreakfast();
-    public void haveFun();
+    void haveBreakfast();
+
+    void haveFun();
 }
 
 
@@ -85,7 +87,7 @@ class LiSi_3 implements Observer{
     }
 
     public void report(String reportText){
-        StdOut.println("lisi report -->"+reportText);
+        System.out.println("lisi report -->" + reportText);
     }
 }
 
@@ -98,7 +100,7 @@ class WangSi_3 implements Observer{
     }
 
     public void report(String reportText){
-        StdOut.println("wangsi report -->"+reportText);
+        System.out.println("wangsi report -->" + reportText);
     }
 }
 
@@ -111,6 +113,6 @@ class LiuSi_3 implements Observer{
     }
 
     public void report(String reportText){
-        StdOut.println("liusi report -->"+reportText);
+        System.out.println("liusi report -->" + reportText);
     }
 }

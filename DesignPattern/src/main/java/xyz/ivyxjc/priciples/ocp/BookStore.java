@@ -1,6 +1,5 @@
 package xyz.ivyxjc.priciples.ocp;
 
-import edu.princeton.algs4.StdOut;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -12,11 +11,11 @@ import java.util.ArrayList;
 
 interface IBook{
 
-    public String getName();
+    String getName();
 
-    public int getPrice();
+    int getPrice();
 
-    public String getAuthor();
+    String getAuthor();
 }
 
 class NovelBook implements IBook{
@@ -72,9 +71,14 @@ public class BookStore {
     public static void main(String[] args){
         NumberFormat formatter=NumberFormat.getCurrencyInstance();
         formatter.setMaximumFractionDigits(2);
-        StdOut.println("---------");
+        System.out.println("---------");
         for (IBook book: bookList){
-            StdOut.println("book: "+book.getName()+"\t author: "+book.getAuthor()+"\t price: "+book.getPrice());
+            System.out.println("book: "
+                + book.getName()
+                + "\t author: "
+                + book.getAuthor()
+                + "\t price: "
+                + book.getPrice());
         }
     }
 }
