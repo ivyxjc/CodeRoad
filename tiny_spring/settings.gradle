@@ -1,0 +1,3 @@
+rootProject.name = 'tiny_spring'
+include 'src'
+
