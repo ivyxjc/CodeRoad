@@ -118,9 +118,12 @@ Runner.java
 
 # sonarlint
 **/.idea/**/sonarlint
-
+**/.idea/
+**/.gradle
 **/gradlew
 **/gradlew.bat
 **/.idea/markdown-navigator/
 **/.idea/copyright/
 **/gradle/
+**/out/
+**/*.iml
