@@ -1,5 +1,6 @@
 package xyz.ivyxjc;
 
+
 public class TestRunner {
     static int run(Expr e) {
         if (e instanceof Num) {
@@ -14,6 +15,7 @@ public class TestRunner {
     public static void main(String[] args) {
         int s = run(new Sum(new Sum(new Num(1), new Num(2)), new Num(4)));
         System.out.println(s);
+        String s1 = new String("sss");
     }
 }
 
@@ -38,3 +40,6 @@ class Num implements Expr {
         this.value = value;
     }
 }
+
+
+

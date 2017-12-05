@@ -15,14 +15,12 @@ buildNumber.properties
 
 # gradle
 .gradle
-/build/
 gradle-wrapper.properties
 
 # Ignore Gradle GUI config
 gradle-app.setting
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
 
 # Cache of project
 .gradletasknamecache
@@ -94,7 +92,6 @@ Runner.java
 **/.gradle
 **/gradlew
 **/gradlew.bat
-**/gradle/
 *.iml
 
 lt application files
@@ -148,8 +145,15 @@ captures/
 
 **/config.*
 
-
 *.java.hsp
 *.sonarj
 *.sw*
->>>>>>> repo
+
+
+**/out/
+**/build/
+**/gradle/
+
+*/gradlew
+*/gradlew.bat
+*/gradle.xml

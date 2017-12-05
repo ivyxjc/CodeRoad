@@ -6,4 +6,5 @@ include "TinySpring"
 include "Stone"
 include 'KotlinBasic'
 include 'JavaBasic'
+include 'SpringBasicDemo'
 

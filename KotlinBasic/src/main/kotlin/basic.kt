@@ -1,4 +1,6 @@
-data class Person(val name: String, val age: Int? = null)
+package basic
+
+private data class Person(val name: String, val age: Int? = null)
 //
 //fun main(args: Array<String>) {
 //    val persons= listOf(Person("Alice"),Person("Bob",age = 20))
@@ -38,5 +40,11 @@ fun eval(e: Expr): Int {
 
 fun main(args: Array<String>) {
     eval(Sum(Sum(Num(1), Num(2)), Num(4)))
+    var sets = listOf<String>("hello", "bbb")
+    sets.last()
 }
+
+
+
+
 
