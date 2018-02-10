@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # maven
 target/
 pom.xml.tag
@@ -13,8 +12,11 @@ buildNumber.properties
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
 
-# gradle
+ gradle
 .gradle
+gradle/
+gradlew
+gradlew.bat
 gradle-wrapper.properties
 
 # Ignore Gradle GUI config
@@ -37,7 +39,10 @@ cmake-build-debug/
 ## Plugin-specific files:
 
 # IntelliJ
-out/
+*.iml
+**/.idea/
+
+
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/
@@ -58,6 +63,8 @@ fabric.properties
 
 # Compiled class file
 *.class
+out/
+
 
 # Log file
 *.log
@@ -88,11 +95,7 @@ logs/
 Runner.java
 
 # sonarlint
-**/.idea/
-**/.gradle
-**/gradlew
-**/gradlew.bat
-*.iml
+
 
 lt application files
 *.apk
@@ -126,16 +129,6 @@ proguard/
 # Android Studio captures folder
 captures/
 
-# Intellij
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/libraries
-
-**/.idea/workspace.xml
-**/.idea/tasks.xml
-**/.idea/libraries
-
-
 # Keystore files
 *.jks
 
@@ -150,10 +143,5 @@ captures/
 *.sw*
 
 
-**/out/
-**/build/
-**/gradle/
-
-*/gradlew
-*/gradlew.bat
-*/gradle.xml
+# custom
+CodeTemp/
