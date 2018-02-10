@@ -1,8 +1,7 @@
-package concurrency.chp2ThreadSafety;
-
-import concurrency.annotations.ThreadSafe;
+package xyz.ivyxjc.concurrency.chp2ThreadSafety;
 
 import java.util.concurrent.atomic.AtomicLong;
+import xyz.ivyxjc.concurrency.annotations.ThreadSafe;
 
 /**
  * Created by ivxyjc on 2017/1/16.

@@ -1,6 +1,6 @@
-package concurrency.chp2ThreadSafety;
+package xyz.ivyxjc.concurrency.chp2ThreadSafety;
 
-import concurrency.annotations.NotThreadSafe;
+import xyz.ivyxjc.concurrency.annotations.NotThreadSafe;
 
 /**
  * Created by ivxyjc on 2017/1/16.

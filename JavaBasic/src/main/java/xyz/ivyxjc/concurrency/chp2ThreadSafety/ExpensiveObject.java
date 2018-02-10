@@ -1,4 +1,4 @@
-package concurrency.chp2ThreadSafety;
+package xyz.ivyxjc.concurrency.chp2ThreadSafety;
 
 /**
  * Created by ivxyjc on 2017/1/16.

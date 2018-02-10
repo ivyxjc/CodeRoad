@@ -1,4 +1,4 @@
-package concurrency.chp3;
+package xyz.ivyxjc.concurrency.chp3;
 
 /**
  * Created by ivxyjc on 2017/1/16.
