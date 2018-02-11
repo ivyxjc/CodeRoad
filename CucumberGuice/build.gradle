@@ -21,4 +21,16 @@ dependencies {
 
     compile group: 'com.google.inject', name: 'guice', version: '4.1.0'
 
+
+    //spring
+    compile group: 'org.springframework', name: 'spring-core', version: '5.0.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-jdbc', version: '5.0.3.RELEASE'
+
+    //apache
+    compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.2.0'
+
+    //mysql
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+
+
 }
