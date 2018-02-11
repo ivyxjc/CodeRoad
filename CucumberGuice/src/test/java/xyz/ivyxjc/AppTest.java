@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         format = {"html:target/html"}
-        , features = {"src/main/resources/Iteration1/Story123456_TS1_TC1.feature"}
-        , glue = {"io.cucumber.samples.dw.steps"}
+        , features = {"src/main/resources/Iteration1/Calculator.feature"}
+        , glue = {"xyz.ivyxjc.stepDefinition"}
 )
 public class AppTest {
 }

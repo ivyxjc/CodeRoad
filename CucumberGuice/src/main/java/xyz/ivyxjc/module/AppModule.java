@@ -76,8 +76,7 @@ public class AppModule extends AbstractModule {
 
         @Override
         public JdbcTemplate get() {
-            JdbcTemplate jdbcTemplate = new JdbcTemplate(mDataSource);
-            return jdbcTemplate;
+            return new JdbcTemplate(mDataSource);
         }
     }
 }
