@@ -1,6 +1,8 @@
 package xyz.ivyxjc.springbootdemo;
 
 
+import org.hamcrest.Matchers;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,6 +36,6 @@ public class HelloControllerIT {
     public void getHello() {
         ResponseEntity<String> response = template.getForEntity(base.toString(),
                 String.class);
-//        assertThat(response.getBody(), equalTo("Greetings from Spring Boot!"));
+        Assert.assertThat(response.getBody(), Matchers.equalTo("Hello World!"));
     }
 }
