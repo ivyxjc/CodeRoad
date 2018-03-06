@@ -4,6 +4,7 @@ rootProject.name = 'CodeRoad'
 include "DesignPattern"
 include "TinySpring"
 include "Stone"
+include "CucumberGuice"
 include 'KotlinBasic'
 include 'JavaBasic'
 include 'SpringBasicDemo'
@@ -12,3 +13,5 @@ include 'Temp'
 include 'CodeTemp'
 include 'DB'
 include 'CucumberGuice'
+include 'SpringBootDemo'
+
