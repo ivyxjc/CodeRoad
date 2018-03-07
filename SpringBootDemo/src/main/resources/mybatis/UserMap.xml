@@ -1,0 +1,10 @@
+<mapper namespace="UserMapper">
+    <resultMap type="xyz.ivyxjc.springbootdemo.model.User" id="userResultMap">
+        <!-- 用id属性来映射主键字段 -->
+        <id property="userId" column="userId"/>
+        <!-- 用result属性来映射非主键字段 -->
+        <result property="userName" column="userName"/>
+        <result property="password" column="password"/>
+        <result property="description" column="description"/>
+    </resultMap>
+</mapper>
