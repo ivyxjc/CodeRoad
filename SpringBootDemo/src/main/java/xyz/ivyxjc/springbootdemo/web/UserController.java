@@ -26,4 +26,15 @@ public class UserController {
     public User getUserById(@PathVariable("id") int id) {
         return mUserService.getUserById(id);
     }
+
+    @RequestMapping(value = "/doSomething", method = RequestMethod.GET)
+    public void doSomething() {
+        mUserService.doSomething();
+    }
+
+    @RequestMapping(value = "/doSome", method = RequestMethod.GET)
+    public void doSome() {
+        mUserService.doSome();
+    }
+
 }
