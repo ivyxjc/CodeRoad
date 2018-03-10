@@ -6,21 +6,21 @@ package xyz.ivyxjc.initialize;
 
 
 public class Initialize {
-    public static final int staticFinal=100;
-    public static final int num=new Integer(10);
-    public static final int num2=1000;
-    
+    public static final int staticFinal = 100;
+    public static final int num = new Integer(10);
+    public static final int num2 = 1000;
+
     static {
         System.out.println(staticFinal);
         System.out.println(num);
         System.out.println(num2);
     }
-    
-    public Initialize(){
+
+    public Initialize() {
         System.out.println("initialize");
     }
-    
-    public Initialize(int i){
+
+    public Initialize(int i) {
         System.out.println("initialize 1");
     }
 }

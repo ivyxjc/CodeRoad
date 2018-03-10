@@ -1,7 +1,6 @@
 package xyz.ivyxjc.concurrency;
 
 
-
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
@@ -10,12 +9,10 @@ import java.util.concurrent.CountDownLatch;
  */
 public class ThreadSafety {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
 
-
-
-        for(int i=0;i<10;i++){
+        for (int i = 0; i < 10; i++) {
             test();
         }
 
@@ -27,10 +24,9 @@ public class ThreadSafety {
 
     }
 
-    public static void test()
-    {
+    public static void test() {
         // 用来测试的List
-        ArrayList<Object> list=new ArrayList<>();
+        ArrayList<Object> list = new ArrayList<>();
 
 
         //线程安全的list
@@ -44,39 +40,35 @@ public class ThreadSafety {
         CountDownLatch countDownLatch = new CountDownLatch(threadCount);
 
         // 启动threadCount个子线程
-        for(int i = 0; i < threadCount; i++)
-        {
+        for (int i = 0; i < threadCount; i++) {
             Thread thread = new Thread(new MyThread(list, countDownLatch));
             thread.start();
         }
 
-        try
-        {
+        try {
             // 主线程等待所有子线程执行完成，再向下执行
             countDownLatch.await();
-        }
-        catch (InterruptedException e)
-        {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        int res=0;
-        for(int i=0;i<list.size();i++){
-            if(list.get(i)==null){
-                res+=1;
+        int res = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) == null) {
+                res += 1;
             }
         }
         // List的size
 //        System.out.println(res) ;
         System.out.println(list.size());
-        if(list.last()!=null){
+        if (list.last() != null) {
             System.out.println("not null");
-        }else{
+        } else {
             System.out.println("null");
         }
     }
 }
 
-class MyThread implements Runnable{
+class MyThread implements Runnable {
 
     private List<Object> list;
 
@@ -84,15 +76,14 @@ class MyThread implements Runnable{
 
     private String name;
 
-    public MyThread(List<Object> list, CountDownLatch countDownLatch)
-    {
+    public MyThread(List<Object> list, CountDownLatch countDownLatch) {
         this.list = list;
         this.countDownLatch = countDownLatch;
     }
 
     @Override
     public void run() {
-        for(int i = 0; i < 100; i++){
+        for (int i = 0; i < 100; i++) {
 //            StdOut.println("第"+name+"线程: size: "+list.size()+" 第"+i+"次add");
             list.add(new Object());
         }

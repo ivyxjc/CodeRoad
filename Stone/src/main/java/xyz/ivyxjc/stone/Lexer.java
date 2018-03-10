@@ -1,4 +1,3 @@
-
 package xyz.ivyxjc.stone;
 
 import xyz.ivyxjc.stone.exception.ParseException;
@@ -6,7 +5,6 @@ import xyz.ivyxjc.stone.exception.ParseException;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.io.Reader;
-
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,9 +15,9 @@ public class Lexer {
             + "|[A-Z_a-z][A-Z_a-z0-9]*|==|<=|>=|&&|\\|\\||\\p{Punct})?";
 
 
-    public Pattern pattern=Pattern.compile(regexPat);
+    public Pattern pattern = Pattern.compile(regexPat);
 
-    public ArrayList<Token> queue=new ArrayList<>();
+    public ArrayList<Token> queue = new ArrayList<>();
 
     private boolean hasMore;
     private LineNumberReader reader;
@@ -28,18 +26,21 @@ public class Lexer {
         hasMore = true;
         reader = new LineNumberReader(r);
     }
+
     public Token read() throws ParseException {
         if (fillQueue(0))
             return queue.remove(0);
         else
             return Token.EOF;
     }
+
     public Token peek(int i) throws ParseException {
         if (fillQueue(i))
             return queue.get(i);
         else
             return Token.EOF;
     }
+
     private boolean fillQueue(int i) throws ParseException {
         while (i >= queue.size())
             if (hasMore)
@@ -48,6 +49,7 @@ public class Lexer {
                 return false;
         return true;
     }
+
     protected void readLine() throws ParseException {
         String line;
         try {
@@ -70,8 +72,7 @@ public class Lexer {
             if (matcher.lookingAt()) {
                 addToken(lineNo, matcher);
                 pos = matcher.end();
-            }
-            else
+            } else
                 throw new ParseException("bad token at line " + lineNo);
         }
         queue.add(new IdToken(lineNo, Token.EOL));
@@ -107,20 +108,21 @@ public class Lexer {
      * matcher.group(3)对应(\\d*)所匹配到的字符串
      * "\\s*((//.*)|([0-9]+)|(\"(\\\\\"|\\\\\\\\|\\\\n|[^\"])*\")"
      * + "|[A-Z_a-z][A-Z_a-z0-9]*|==|<=|>=|&&|\\|\\||\\p{Punct})?";
+     *
      * @param lineNo
      * @param matcher
      */
-    protected void addToken(int lineNo, Matcher matcher){
-        String m=matcher.group(1);
-        if(m!=null){ //说明该语句有内容
-            if(matcher.group(2)==null){ //说明该语句不是 注释
+    protected void addToken(int lineNo, Matcher matcher) {
+        String m = matcher.group(1);
+        if (m != null) { //说明该语句有内容
+            if (matcher.group(2) == null) { //说明该语句不是 注释
                 Token token;
-                if(matcher.group(3)!=null){
-                    token = new NumToken(lineNo,Integer.parseInt(m));
-                }else if(matcher.group(4)!=null){
-                    token=new StrToken(lineNo,m);
-                }else {
-                    token=new IdToken(lineNo,m);
+                if (matcher.group(3) != null) {
+                    token = new NumToken(lineNo, Integer.parseInt(m));
+                } else if (matcher.group(4) != null) {
+                    token = new StrToken(lineNo, m);
+                } else {
+                    token = new IdToken(lineNo, m);
                 }
                 queue.add(token);
 
@@ -129,11 +131,12 @@ public class Lexer {
     }
 
 
-    static class NumToken extends Token{
+    static class NumToken extends Token {
         private int value;
-        NumToken(int lines,int v) {
+
+        NumToken(int lines, int v) {
             super(lines);
-            value=v;
+            value = v;
         }
 
         @Override
@@ -152,12 +155,12 @@ public class Lexer {
         }
     }
 
-    static class IdToken extends Token{
+    static class IdToken extends Token {
         private String text;
 
-        IdToken(int line,String id){
+        IdToken(int line, String id) {
             super(line);
-            text=id;
+            text = id;
         }
 
         @Override
@@ -171,18 +174,18 @@ public class Lexer {
         }
     }
 
-    static class StrToken extends Token{
+    static class StrToken extends Token {
         String str;
-        public StrToken(int lines,String str) {
+
+        public StrToken(int lines, String str) {
             super(lines);
-            this.str=str;
+            this.str = str;
         }
 
         @Override
         public String getText() {
             return str;
         }
-
 
 
         @Override

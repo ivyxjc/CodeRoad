@@ -14,7 +14,7 @@ public abstract class AbstractApplicationContext implements ApplicationContext {
         this.beanFactory = beanFactory;
     }
 
-    public void refresh() throws Exception{
+    public void refresh() throws Exception {
     }
 
     @Override

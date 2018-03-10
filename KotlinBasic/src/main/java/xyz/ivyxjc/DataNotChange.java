@@ -41,14 +41,16 @@ class Data {
         this.b = b;
     }
 
-    @Override public boolean equals(Object obj) {
+    @Override
+    public boolean equals(Object obj) {
         if (obj == null || !(obj instanceof Data)) {
             return false;
         }
         return a == ((Data) obj).a && b == ((Data) obj).b;
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return a * 31 + b * 17;
     }
 }

@@ -27,19 +27,14 @@ import java.util.List;
 
 public class CatsHelper {
 
-    public interface CuestCatCallback{
-        void onCutestCatSaved(Uri uri);
-        void onQueryFailed(Exception e);
-    }
-
     Api api;
 
-    public void saveTheCutestCat(String query,CuestCatCallback cuestCatCallback){
+    public void saveTheCutestCat(String query, CuestCatCallback cuestCatCallback) {
         List<Cat> cats = api.queryCats(query, new Api.CatsQueryCallback() {
             @Override
             public void onCatListReceived(List<Cat> cats) {
-                Cat cuest=findCutest(cats);
-                Uri uri=api.store(cuest);
+                Cat cuest = findCutest(cats);
+                Uri uri = api.store(cuest);
                 cuestCatCallback.onCutestCatSaved(uri);
             }
 
@@ -54,5 +49,11 @@ public class CatsHelper {
 
     private Cat findCutest(List<Cat> cats) {
         return Collections.max(cats);
+    }
+
+    public interface CuestCatCallback {
+        void onCutestCatSaved(Uri uri);
+
+        void onQueryFailed(Exception e);
     }
 }

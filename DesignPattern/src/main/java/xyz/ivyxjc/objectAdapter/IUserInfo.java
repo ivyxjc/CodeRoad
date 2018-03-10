@@ -5,8 +5,10 @@ package xyz.ivyxjc.objectAdapter;
  */
 interface IUserInfo {
 
-    public String getUserName();
-    public String getHomeAddress();
-    public String getJobPosition();
+    String getUserName();
+
+    String getHomeAddress();
+
+    String getJobPosition();
 
 }

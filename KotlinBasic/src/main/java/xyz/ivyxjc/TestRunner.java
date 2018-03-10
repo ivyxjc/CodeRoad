@@ -1,6 +1,10 @@
 package xyz.ivyxjc;
 
 
+interface Expr {
+
+}
+
 public class TestRunner {
     static int run(Expr e) {
         if (e instanceof Num) {
@@ -17,10 +21,6 @@ public class TestRunner {
         System.out.println(s);
         String s1 = new String("sss");
     }
-}
-
-interface Expr {
-
 }
 
 class Sum implements Expr {

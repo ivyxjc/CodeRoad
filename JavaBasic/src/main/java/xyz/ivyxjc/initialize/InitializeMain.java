@@ -6,10 +6,10 @@ package xyz.ivyxjc.initialize;
 
 
 public class InitializeMain {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 //        Initialize s=new Initialize();
-        int a=new Initialize().staticFinal;
-        int b=new Initialize().num;
+        int a = new Initialize().staticFinal;
+        int b = new Initialize().num;
 //        System.out.println(a);
     }
 }

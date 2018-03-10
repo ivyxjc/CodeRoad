@@ -7,7 +7,7 @@ public class HelloWorldService_2 {
 
     private String text;
 
-    public void helloWorld(){
+    public void helloWorld() {
         System.out.println(text);
     }
 

@@ -3,21 +3,26 @@ package xyz.ivyxjc.stone;
 /**
  * Created by jc on 11/21/2016.
  */
-import java.io.FileReader;
+
+import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.FileReader;
 import java.io.Reader;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 
 public class CodeDialog extends Reader {
     private String buffer = null;
     private int pos = 0;
 
-    public int read(char[] cbuf, int off, int len) throws IOException {
+    public static Reader file() throws FileNotFoundException {
+        JFileChooser chooser = new JFileChooser();
+        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
+            return new BufferedReader(new FileReader(chooser.getSelectedFile()));
+        else
+            throw new FileNotFoundException("no file specified");
+    }
+
+    public int read(char[] cbuf, int off, int len) {
         if (buffer == null) {
             String in = showDialog();
             if (in == null)
@@ -37,8 +42,14 @@ public class CodeDialog extends Reader {
             buffer = null;
         return size;
     }
-    protected void print(String s) { System.out.println(s); }
-    public void close() throws IOException {}
+
+    protected void print(String s) {
+        System.out.println(s);
+    }
+
+    public void close() {
+    }
+
     protected String showDialog() {
         JTextArea area = new JTextArea(20, 40);
         JScrollPane pane = new JScrollPane(area);
@@ -50,12 +61,5 @@ public class CodeDialog extends Reader {
             return area.getText();
         else
             return null;
-    }
-    public static Reader file() throws FileNotFoundException {
-        JFileChooser chooser = new JFileChooser();
-        if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
-            return new BufferedReader(new FileReader(chooser.getSelectedFile()));
-        else
-            throw new FileNotFoundException("no file specified");
     }
 }

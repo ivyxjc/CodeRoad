@@ -7,19 +7,19 @@ import java.util.Map;
  */
 public class OutUserInfo extends OuterUser implements IUserInfo {
 
-    private Map baseInfo=super.getUserBaseInfo();
+    private Map baseInfo = super.getUserBaseInfo();
 
 
     @Override
     public String getUserName() {
-        String userName=(String)this.baseInfo.get("userName");
+        String userName = (String) this.baseInfo.get("userName");
         System.out.println(userName);
         return userName;
     }
 
     @Override
     public String getHomeAddress() {
-        String homeAddress=(String)this.baseInfo.get("homeAddress");
+        String homeAddress = (String) this.baseInfo.get("homeAddress");
         System.out.println(homeAddress);
         return homeAddress;
     }
@@ -27,7 +27,7 @@ public class OutUserInfo extends OuterUser implements IUserInfo {
 
     @Override
     public String getJobPosition() {
-        String jobPosition=(String)this.baseInfo.get("jobPosition");
+        String jobPosition = (String) this.baseInfo.get("jobPosition");
         System.out.println(jobPosition);
         return jobPosition;
     }

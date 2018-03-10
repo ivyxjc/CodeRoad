@@ -8,12 +8,12 @@ import xyz.ivyxjc.HelloWorldService;
  */
 
 
-public class ClassPathXmlApplicationContextTest  {
+public class ClassPathXmlApplicationContextTest {
 
     @Test
-    public void test() throws Exception{
-        ApplicationContext context=new ClassPathXmlApplicationContext("resource_test.xml");
-        HelloWorldService helloWorldService=(HelloWorldService) context.getBean("helloWorldService");
+    public void test() throws Exception {
+        ApplicationContext context = new ClassPathXmlApplicationContext("resource_test.xml");
+        HelloWorldService helloWorldService = (HelloWorldService) context.getBean("helloWorldService");
         helloWorldService.helloWorld();
     }
 }

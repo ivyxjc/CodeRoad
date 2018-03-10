@@ -8,10 +8,10 @@ import java.util.Observer;
  * Created by ivxyjc on 2016/11/18.
  */
 public class Java_Observer {
-    public static void main(String[] args){
-        LiSi_4 lisi=new LiSi_4();
+    public static void main(String[] args) {
+        LiSi_4 lisi = new LiSi_4();
 
-        HanFeiZi_4 hanfeizi=new HanFeiZi_4();
+        HanFeiZi_4 hanfeizi = new HanFeiZi_4();
 
         hanfeizi.addObserver(lisi);
 
@@ -20,7 +20,7 @@ public class Java_Observer {
     }
 }
 
-class HanFeiZi_4 extends Observable implements IHanFeiZi_3{
+class HanFeiZi_4 extends Observable implements IHanFeiZi_3 {
     @Override
     public void haveBreakfast() {
         System.out.println("han has breakfast");
@@ -36,7 +36,7 @@ class HanFeiZi_4 extends Observable implements IHanFeiZi_3{
     }
 }
 
-class LiSi_4 implements Observer{
+class LiSi_4 implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
@@ -44,7 +44,8 @@ class LiSi_4 implements Observer{
         this.report(arg.toString());
         System.out.println("report finish");
     }
-    public void report(String reportText){
+
+    public void report(String reportText) {
         System.out.println("lisi report -->" + reportText);
     }
 }

@@ -8,16 +8,16 @@ import java.util.Random;
  */
 public class TestWrite {
 
-    public static void main(String[] args){
-        ArrayList<Model> list=new ArrayList<>();
-        Random random=new Random();
+    public static void main(String[] args) {
+        ArrayList<Model> list = new ArrayList<>();
+        Random random = new Random();
         random.nextFloat();
 
-        for(int i=0;i<10;i++){
-            Model m=new Model();
-            m.setTitle(random.nextDouble()+"");
-            m.setUrl(random.nextDouble()+"");
-            m.setContent(random.nextDouble()+"");
+        for (int i = 0; i < 10; i++) {
+            Model m = new Model();
+            m.setTitle(random.nextDouble() + "");
+            m.setUrl(random.nextDouble() + "");
+            m.setContent(random.nextDouble() + "");
             list.add(m);
         }
 

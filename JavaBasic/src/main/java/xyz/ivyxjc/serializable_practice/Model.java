@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by jc on 11/30/2016.
  */
-public class Model implements Serializable{
+public class Model implements Serializable {
     private String title;
     private String url;
     private String content;
@@ -36,7 +36,7 @@ public class Model implements Serializable{
 
     @Override
     public String toString() {
-        String res="title: "+title+" url: "+url+" content: "+content;
+        String res = "title: " + title + " url: " + url + " content: " + content;
         return res;
     }
 }

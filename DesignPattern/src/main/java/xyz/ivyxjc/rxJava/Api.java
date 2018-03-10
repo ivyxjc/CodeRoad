@@ -18,11 +18,13 @@ import java.util.List;
 //异步方式
 public interface Api {
 
-    interface CatsQueryCallback{
+    List<Cat> queryCats(String query, CatsQueryCallback catsQueryCallback);
+
+    Uri store(Cat cat);
+
+    interface CatsQueryCallback {
         void onCatListReceived(List<Cat> cats);
+
         void onError(Exception e);
     }
-
-    List<Cat> queryCats(String query, CatsQueryCallback catsQueryCallback);
-    Uri store(Cat cat);
 }

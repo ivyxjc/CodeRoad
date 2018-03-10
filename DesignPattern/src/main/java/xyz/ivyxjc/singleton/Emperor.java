@@ -1,21 +1,28 @@
 package xyz.ivyxjc.singleton;
 
 
-import java.io.ObjectStreamException;
+enum SingletonEnum {
+    INSTACNE;
+
+    public void doSomething() {
+        System.out.println("doSomething...");
+    }
+}
 
 /**
  * Created by ivyxjc on 2016/10/25.
  */
 public class Emperor {
-    private static final Emperor emperor=new Emperor();
+    private static final Emperor emperor = new Emperor();
 
-    private Emperor(){}
+    private Emperor() {
+    }
 
-    public static Emperor getInstance(){
+    public static Emperor getInstance() {
         return emperor;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         SingletonEnum.INSTACNE.doSomething();
     }
 }
@@ -24,31 +31,35 @@ public class Emperor {
 class Singleton {
     private static Singleton instance;
 
-    private Singleton(){}
+    private Singleton() {
+    }
 
-    public static synchronized Singleton getInstance(){
-        if(instance==null){
-            instance=new Singleton();
+    public static synchronized Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
         }
         return instance;
     }
 
-    private Object readResolve() throws ObjectStreamException{
+    private Object readResolve() {
         return instance;
     }
 }
 
+//静态内部类
+
 //double check lock
-class SingletonDCL{
+class SingletonDCL {
     private static volatile SingletonDCL sInstance;
 
-    private SingletonDCL(){}
+    private SingletonDCL() {
+    }
 
-    public static SingletonDCL getInstance(){
-        if(sInstance==null){
-            synchronized (SingletonDCL.class){
-                if(sInstance==null){
-                    sInstance=new SingletonDCL();
+    public static SingletonDCL getInstance() {
+        if (sInstance == null) {
+            synchronized (SingletonDCL.class) {
+                if (sInstance == null) {
+                    sInstance = new SingletonDCL();
                 }
             }
         }
@@ -56,33 +67,24 @@ class SingletonDCL{
         return sInstance;
     }
 
-    private Object readResolve() throws ObjectStreamException{
+    private Object readResolve() {
         return sInstance;
     }
-}
-
-//静态内部类
-
-class SingletonStatic{
-    private SingletonStatic(){}
-
-    public static SingletonStatic getInstance(){
-        return SingletonStaticHolder.sInstance;
-    }
-
-    private static class SingletonStaticHolder{
-        private static final SingletonStatic sInstance=new SingletonStatic();
-    }
-
 }
 
 
 //枚举单例
 
-enum SingletonEnum{
-    INSTACNE;
-
-    public void doSomething(){
-        System.out.println("doSomething...");
+class SingletonStatic {
+    private SingletonStatic() {
     }
+
+    public static SingletonStatic getInstance() {
+        return SingletonStaticHolder.sInstance;
+    }
+
+    private static class SingletonStaticHolder {
+        private static final SingletonStatic sInstance = new SingletonStatic();
+    }
+
 }

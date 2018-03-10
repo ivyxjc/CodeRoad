@@ -1,38 +1,38 @@
 package xyz.ivyxjc.factory;
 
 
-/**
- * Created by jc on 10/28/2016.
- */
-public class NvWa extends AbstractHumanFactory {
-    @Override
-    public <T extends Human> T createHuamn(Class<T> c) {
-        Human human=null;
-        try{
-            human=(Human)Class.forName(c.getName()).newInstance();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return (T)human;
-    }
-
-    public static void main(String[] args){
-
-    }
-}
-
-abstract class AbstractHumanFactory{
-    public abstract <T extends Human> T  createHuamn(Class<T> c);
-}
-
-interface Human{
+interface Human {
     void getColor();
 
     void talk();
 
 }
 
-class BlackHuman implements Human{
+/**
+ * Created by jc on 10/28/2016.
+ */
+public class NvWa extends AbstractHumanFactory {
+    public static void main(String[] args) {
+
+    }
+
+    @Override
+    public <T extends Human> T createHuamn(Class<T> c) {
+        Human human = null;
+        try {
+            human = (Human) Class.forName(c.getName()).newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return (T) human;
+    }
+}
+
+abstract class AbstractHumanFactory {
+    public abstract <T extends Human> T createHuamn(Class<T> c);
+}
+
+class BlackHuman implements Human {
     @Override
     public void getColor() {
         System.out.println("black");
@@ -44,7 +44,7 @@ class BlackHuman implements Human{
     }
 }
 
-class WhiteHuman implements Human{
+class WhiteHuman implements Human {
     @Override
     public void getColor() {
         System.out.println("white");
@@ -56,7 +56,7 @@ class WhiteHuman implements Human{
     }
 }
 
-class YellowHuman implements Human{
+class YellowHuman implements Human {
     @Override
     public void getColor() {
         System.out.println("yellow");

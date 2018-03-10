@@ -1,7 +1,5 @@
 package xyz.ivyxjc.stone;
 
-import javax.crypto.spec.OAEPParameterSpec;
-
 /**
  * Created by ivxyjc on 2016/11/22.
  */

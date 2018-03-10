@@ -3,10 +3,10 @@
 package strings
 
 fun <T> joinToString(
-    collection: Collection<T>,
-    separator: String = ", ",
-    prefix: String = " ",
-    postfix: String = " "
+        collection: Collection<T>,
+        separator: String = ", ",
+        prefix: String = " ",
+        postfix: String = " "
 ): String {
     val result = StringBuilder(prefix)
     for ((index, element) in collection.withIndex()) {
@@ -19,7 +19,7 @@ fun <T> joinToString(
 }
 
 fun String.lastttChar(): Char =
-    this.get(length - 1)
+        this.get(length - 1)
 
 
 data class Dataa(var a: Int, val b: Int)

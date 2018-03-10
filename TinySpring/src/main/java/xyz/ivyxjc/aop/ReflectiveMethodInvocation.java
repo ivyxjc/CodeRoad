@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 /**
  * Created by ivxyjc on 2017/1/12.
  */
-public class ReflectiveMethodInvocation implements MethodInvocation{
+public class ReflectiveMethodInvocation implements MethodInvocation {
 
     private Object target;
 
@@ -16,10 +16,10 @@ public class ReflectiveMethodInvocation implements MethodInvocation{
 
     private Object[] args;
 
-    public ReflectiveMethodInvocation(Object target,Method method, Object[] args){
-        this.target=target;
-        this.method=method;
-        this.args=args;
+    public ReflectiveMethodInvocation(Object target, Method method, Object[] args) {
+        this.target = target;
+        this.method = method;
+        this.args = args;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ReflectiveMethodInvocation implements MethodInvocation{
 
     @Override
     public Object proceed() throws Throwable {
-        return method.invoke(target,args);
+        return method.invoke(target, args);
     }
 
     @Override

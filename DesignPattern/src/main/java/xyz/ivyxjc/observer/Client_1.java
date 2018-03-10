@@ -6,18 +6,29 @@ package xyz.ivyxjc.observer;
  */
 
 
+interface IHanFeiZi {
+    void haveBreakfast();
+
+    void haveFun();
+}
+
+
+interface ILiSi {
+    void update(String context);
+}
+
 /**
  * 设置一个后台运行的thread不断地检查 被监测的类的相应状态 并作出响应,
  * 效率低, 占用内存 cpu过高.
  */
-public class Client_1{
-    public static void main(String[] args) throws InterruptedException{
-        LiSi lisi=new LiSi();
-        HanFeiZi hanFeiZi=new HanFeiZi();
+public class Client_1 {
+    public static void main(String[] args) {
+        LiSi lisi = new LiSi();
+        HanFeiZi hanFeiZi = new HanFeiZi();
 
-        Spy spyBreakfast=new Spy(hanFeiZi,lisi,"breakfast");
+        Spy spyBreakfast = new Spy(hanFeiZi, lisi, "breakfast");
         spyBreakfast.start();
-        Spy spyFun=new Spy(hanFeiZi,lisi,"fun");
+        Spy spyFun = new Spy(hanFeiZi, lisi, "fun");
         spyFun.start();
 
 //        Thread.sleep(100);
@@ -30,28 +41,21 @@ public class Client_1{
     }
 }
 
+class HanFeiZi implements IHanFeiZi {
 
-interface IHanFeiZi {
-    void haveBreakfast();
-
-    void haveFun();
-}
-
-class HanFeiZi implements IHanFeiZi{
-
-    private boolean isHavingBreakfast=false;
-    private boolean isHavingFun=false;
+    private boolean isHavingBreakfast = false;
+    private boolean isHavingFun = false;
 
     @Override
     public void haveBreakfast() {
         System.out.println("han has breakfast");
-        this.isHavingBreakfast=true;
+        this.isHavingBreakfast = true;
     }
 
     @Override
     public void haveFun() {
         System.out.println("hanhas fun");
-        this.isHavingFun=true;
+        this.isHavingFun = true;
     }
 
 
@@ -73,11 +77,7 @@ class HanFeiZi implements IHanFeiZi{
     }
 }
 
-interface  ILiSi{
-    void update(String context);
-}
-
-class LiSi implements ILiSi{
+class LiSi implements ILiSi {
     @Override
     public void update(String context) {
         System.out.println("lisi: xyz.ivyxjc.observer hanfei...");
@@ -85,36 +85,36 @@ class LiSi implements ILiSi{
         System.out.println("report finish");
     }
 
-    public void report(String reportText){
+    public void report(String reportText) {
         System.out.println("lisi report -->" + reportText);
     }
 }
 
-class Spy extends Thread{
+class Spy extends Thread {
     private HanFeiZi mHanFeiZi;
     private LiSi mLiSi;
 
     private String type;
 
-    public Spy(HanFeiZi _hanfeizi,LiSi _lisi, String _type){
-        mHanFeiZi=_hanfeizi;
-        mLiSi=_lisi;
-        type=_type;
+    public Spy(HanFeiZi _hanfeizi, LiSi _lisi, String _type) {
+        mHanFeiZi = _hanfeizi;
+        mLiSi = _lisi;
+        type = _type;
     }
 
     @Override
     public void run() {
-        while(true){
-            if(this.type.equals("breakfast")) {
+        while (true) {
+            if (this.type.equals("breakfast")) {
                 if (this.mHanFeiZi.isHavingBreakfast()) {
                     this.mLiSi.update("hanfeizi has breakfast");
                     this.mHanFeiZi.setHavingBreakfast(false);
                 }
-            }else{
+            } else {
 //                System.out.println(this.mHanFeiZi.isHavingFun());
-                if(this.mHanFeiZi.isHavingFun()){
-                        this.mLiSi.update("hanfeizi has fun");
-                        this.mHanFeiZi.setHavingFun(false);
+                if (this.mHanFeiZi.isHavingFun()) {
+                    this.mLiSi.update("hanfeizi has fun");
+                    this.mHanFeiZi.setHavingFun(false);
                 }
             }
         }

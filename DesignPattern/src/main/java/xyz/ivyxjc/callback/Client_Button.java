@@ -1,11 +1,15 @@
 package xyz.ivyxjc.callback;
 
 
+interface IListener {
+    void onClick();
+}
+
 /**
  * Created by jc on 11/18/2016.
  */
 public class Client_Button {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 //        Button button=new Button();
 //        button.setOnClickListener(new IListener() {
 //            @Override
@@ -16,17 +20,17 @@ public class Client_Button {
 //
 //        button.doClick();
 
-        Activity activity=new Activity();
+        Activity activity = new Activity();
         activity.onCreate();
     }
 }
 
-class Activity implements IListener{
+class Activity implements IListener {
 
     private Button mButton;
 
-    public void onCreate(){
-        mButton=new Button();
+    public void onCreate() {
+        mButton = new Button();
         mButton.setOnClickListener(this);
         mButton.doClick();
     }
@@ -37,19 +41,15 @@ class Activity implements IListener{
     }
 }
 
-interface IListener{
-    void onClick();
-}
-
-class Button{
+class Button {
 
     IListener mListener;
 
-    public void setOnClickListener(IListener listener){
-        mListener=listener;
+    public void setOnClickListener(IListener listener) {
+        mListener = listener;
     }
 
-    public void doClick(){
+    public void doClick() {
         mListener.onClick();
     }
 

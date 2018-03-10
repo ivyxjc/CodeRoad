@@ -11,13 +11,13 @@ import java.util.List;
  */
 public class PropertyValues {
 
-    private List<PropertyValue> mPropertyValuesList=new ArrayList<PropertyValue>();
+    private List<PropertyValue> mPropertyValuesList = new ArrayList<PropertyValue>();
 
-    public PropertyValues(){
+    public PropertyValues() {
 
     }
 
-    public void addPropertyValue(PropertyValue pv){
+    public void addPropertyValue(PropertyValue pv) {
         // TODO: 1/5/2017  根据propertyname 进行去重
         mPropertyValuesList.add(pv);
     }

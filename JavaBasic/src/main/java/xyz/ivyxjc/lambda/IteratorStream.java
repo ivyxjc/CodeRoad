@@ -1,6 +1,6 @@
 package xyz.ivyxjc.lambda;
 
-import java.util.*;
+import java.util.ArrayList;
 import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
 
@@ -9,13 +9,12 @@ import java.util.stream.Stream;
  */
 
 
-
 public class IteratorStream {
 
-    public static void main(String[] args){
-        ArrayList<Artist> allArtists=new ArrayList<>();
-        for(int i=0;i<10;i++){
-            allArtists.add(new Artist(i+"th","London"));
+    public static void main(String[] args) {
+        ArrayList<Artist> allArtists = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            allArtists.add(new Artist(i + "th", "London"));
         }
 //        -----------------------------
 //        long count=allArtists.stream()
@@ -86,15 +85,15 @@ public class IteratorStream {
 //        -----------------------------
 //        reduce
 
-        int count=Stream.of(1,2,3)
-                        .reduce(0,(ccc,element)-> ccc+element);
+        int count = Stream.of(1, 2, 3)
+                .reduce(0, (ccc, element) -> ccc + element);
         System.out.println(count);
 //        6
 
-        BinaryOperator<Integer> accumulator=(acc,element)->acc+element;
-        int count_2=accumulator.apply(
+        BinaryOperator<Integer> accumulator = (acc, element) -> acc + element;
+        int count_2 = accumulator.apply(
                 accumulator.apply(
-                        accumulator.apply(0,1),
+                        accumulator.apply(0, 1),
                         2),
                 3);
         System.out.println(count_2);
@@ -102,12 +101,11 @@ public class IteratorStream {
     }
 
 
+    public static boolean isDigit(Character c) {
+        char[] digits = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
 
-    public static boolean isDigit(Character c){
-        char[] digits={'1','2','3','4','5','6','7','8','9','0'};
-
-        for(char i:digits){
-            if(c.equals(i)){
+        for (char i : digits) {
+            if (c.equals(i)) {
                 return true;
             }
         }
@@ -116,35 +114,35 @@ public class IteratorStream {
 
 }
 
-class Artist{
+class Artist {
     private String name;
     private String from;
 
-    public Artist(String name,String from){
-        this.name=name;
-        this.from=from;
+    public Artist(String name, String from) {
+        this.name = name;
+        this.from = from;
     }
 
-    public boolean isFrom(String str){
+    public boolean isFrom(String str) {
         return str.equals(from);
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 }
 
-class Track{
+class Track {
 
     String name;
     int rate;
 
-    public Track(String name, int rate){
-        this.name=name;
-        this.rate=rate;
+    public Track(String name, int rate) {
+        this.name = name;
+        this.rate = rate;
     }
 
-    public int getLength(){
+    public int getLength() {
         return rate;
     }
 }

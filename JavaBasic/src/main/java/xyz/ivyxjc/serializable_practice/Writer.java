@@ -10,15 +10,15 @@ import java.io.ObjectOutputStream;
  */
 public class Writer {
 
-    public static void write(Object o){
+    public static void write(Object o) {
         try {
             FileOutputStream fos = new FileOutputStream("E:\\Coding\\Java\\tmpOut\\model.ser");
-            ObjectOutputStream ow=new ObjectOutputStream(fos);
+            ObjectOutputStream ow = new ObjectOutputStream(fos);
             ow.writeObject(o);
             ow.close();
-        }catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
