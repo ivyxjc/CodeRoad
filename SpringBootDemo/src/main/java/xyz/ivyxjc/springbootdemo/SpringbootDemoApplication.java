@@ -26,7 +26,6 @@ public class SpringbootDemoApplication extends AsyncConfigurerSupport {
 
     private static final Logger logger = LoggerFactory.getLogger(SpringbootDemoApplication.class);
 
-
 //    @Autowired
 //    private IUserService usi;
 
@@ -36,6 +35,7 @@ public class SpringbootDemoApplication extends AsyncConfigurerSupport {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringbootDemoApplication.class, args);
+        System.out.println("hello world");
     }
 
     @Override
