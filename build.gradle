@@ -1,10 +1,9 @@
-group 'xyz.ivyxjc'
-version '1.0-SNAPSHOT'
-
 buildscript {
-    ext.kotlin_version = '1.2.0'
-
+    ext.kotlin_version = '1.2.21'
+    ext.spring_version = '5.0.4.RELEASE'
+    ext.springboot_version = '2.0.0.RELEASE'
     repositories {
+        mavenLocal()
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     }
 
@@ -12,15 +11,15 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
+subprojects { subproj->
 
-
-allprojects {
     apply plugin: 'java'
     apply plugin: 'kotlin'
 
     sourceCompatibility = 1.8
 
     repositories {
+        mavenLocal()
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     }
 

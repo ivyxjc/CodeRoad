@@ -145,3 +145,5 @@ captures/
 # custom
 CodeTemp/
 jdbc.properties
+
+log/
