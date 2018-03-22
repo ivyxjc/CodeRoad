@@ -1,9 +1,12 @@
+group = 'xyz.ivyxjc'
+version = '0.0.1-SNAPSHOT'
 
 buildscript {
     ext {
         springBootVersion = '2.0.0.RELEASE'
     }
     repositories {
+        mavenLocal()
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     }
     dependencies {
@@ -11,22 +14,14 @@ buildscript {
     }
 }
 
+apply plugin: 'org.springframework.boot'
+
 task dockerBuild(type:Exec,dependsOn:build){
     workingDir './'
-    commandLine "PowerShell", "copy ./src/main/resources/Dockerfile ./build/libs/Dockerfile"
+    commandLine "PowerShell", "copy ./src/main/resources/Dockerfile ."
     workingDir "./build/libs"
     commandLine "PowerShell", "docker build -t springboot ."
 }
-
-apply plugin: 'java'
-apply plugin: 'kotlin'
-apply plugin: 'org.springframework.boot'
-
-
-
-group = 'xyz.ivyxjc'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
 
 repositories {
     mavenLocal()
@@ -34,11 +29,11 @@ repositories {
 }
 
 dependencies {
-    testCompile('org.springframework.boot:spring-boot-starter-test:2.0.0.RELEASE')
+    testCompile("org.springframework.boot:spring-boot-starter-test:$springboot_version")
 
-    compile('org.springframework.boot:spring-boot-starter-web:2.0.0.RELEASE')
+    compile("org.springframework.boot:spring-boot-starter-web:$springboot_version")
 
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-cache', version: '2.0.0.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-cache', version:springboot_version
 
     compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.3.1'
 
