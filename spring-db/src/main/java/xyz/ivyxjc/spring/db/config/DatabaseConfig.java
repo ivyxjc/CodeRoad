@@ -1,12 +1,7 @@
 package xyz.ivyxjc.spring.db.config;
 
-import com.alibaba.druid.pool.DruidDataSourceFactory;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
-import lombok.NonNull;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,25 +19,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 @ComponentScan(basePackages = {"xyz.ivyxjc.spring.db"})
 @EnableJpaRepositories(basePackages = {"xyz.ivyxjc.spring.db.dao"})
 public class DatabaseConfig {
-
-    @NonNull
-    @Bean
-    public DataSource druidDataSource() {
-        Properties properties = new Properties();
-        InputStream in = this.getClass().getClassLoader().getResourceAsStream("jdbc.properties");
-        DataSource dataSource = null;
-        try {
-            properties.load(in);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            dataSource = DruidDataSourceFactory.createDataSource(properties);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return dataSource;
-    }
 
     @Bean(name = "entityManagerFactory")
     public EntityManagerFactory defaultEntityManagerFactory(DataSource dataSource,
